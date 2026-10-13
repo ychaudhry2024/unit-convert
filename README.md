@@ -51,3 +51,10 @@ The trade-off: the unit set is fixed and small. If you need a unit that is not l
 - **Negative Kelvin is allowed.** The library does not police physical meaningfulness. A negative Kelvin reading is the caller's concern; the conversion is still mathematically defined.
 
 `ConversionError` subclasses `ValueError`, so code that catches `ValueError` will also catch it.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
