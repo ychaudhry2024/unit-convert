@@ -1,6 +1,6 @@
 [project]
 name = "unit-convert"
-version = "0.1.0"
+version = "0.1.1"
 description = "Switch measurements across distance, weight, and heat scales."
 requires-python = ">=3.10"
 dependencies = []
